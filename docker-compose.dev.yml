@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    container_name: japanese-voc-trainer-dev
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - DATABASE_PATH=/app/data/vocab.db
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - sqlite-dev-data:/app/data
+    command: sh -c "npx tsx scripts/seed.ts && npm run dev"
+
+volumes:
+  sqlite-dev-data:
+    driver: local

@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Database (user progress — do not commit)
+data/vocab.db
+data/*.db
+
+# Playwright
+playwright-report/
+test-results/

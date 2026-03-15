@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+data/vocab.db
+*.md
+.env*
+tests/e2e
+playwright-report
+test-results

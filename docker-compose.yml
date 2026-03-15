@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: .
+      target: runner
+    image: japanese-voc-trainer:latest
+    container_name: japanese-voc-trainer
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_PATH=/app/data/vocab.db
+      - PORT=3000
+    volumes:
+      - sqlite-data:/app/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "const http=require('http');const req=http.request({host:'localhost',port:3000,path:'/api/settings'},r=>{process.exit(r.statusCode===200?0:1)});req.on('error',()=>process.exit(1));req.end()"
+        ]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+
+volumes:
+  sqlite-data:
+    driver: local
