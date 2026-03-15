@@ -17,6 +17,7 @@ import { family } from "./topics/family";
 import { emotions } from "./topics/emotions";
 import { weather } from "./topics/weather";
 import { coreN5 } from "./topics/core-n5";
+import { coreN5Part2 } from "./topics/core-n5-2";
 
 /** All vocabulary entries across all topics */
 export const ALL_VOCAB: VocabEntry[] = [
@@ -38,6 +39,7 @@ export const ALL_VOCAB: VocabEntry[] = [
   ...weather,
   // Core N5 words distributed across topics
   ...coreN5,
+  ...coreN5Part2,
 ];
 
 /** Vocabulary grouped by topic — computed from ALL_VOCAB so extra entries
