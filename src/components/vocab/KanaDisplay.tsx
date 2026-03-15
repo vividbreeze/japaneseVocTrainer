@@ -43,22 +43,34 @@ export function KanaDisplay({
   };
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      {/* Main display */}
-      <div className={`japanese font-bold leading-tight text-center ${sizeClass}`}>
+    <div className="flex flex-col items-center gap-3">
+      {/* Main Japanese display — always white so it's visible on any bg */}
+      <div
+        className={`font-bold leading-tight text-center text-white ${sizeClass}`}
+        style={{
+          fontFamily:
+            '"Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", "MS Gothic", sans-serif',
+        }}
+      >
         {getMainDisplay()}
       </div>
 
-      {/* In "all" mode, show all scripts */}
+      {/* In "all" mode, show hiragana + katakana below kanji */}
       {displayScript === "all" && japanese !== kana && (
-        <div className="japanese text-2xl text-gray-400">
-          {kana} / {hiraganaToKatakana(kana)}
+        <div
+          className="text-2xl text-gray-300"
+          style={{
+            fontFamily:
+              '"Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif',
+          }}
+        >
+          {kana} ・ {hiraganaToKatakana(kana)}
         </div>
       )}
 
       {/* Romaji hint */}
       {showRomaji && (
-        <div className="text-lg text-indigo-300 font-mono">{romaji}</div>
+        <div className="text-base text-indigo-300 font-mono tracking-wider">{romaji}</div>
       )}
     </div>
   );

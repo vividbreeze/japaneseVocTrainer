@@ -16,7 +16,9 @@ import { timeDate } from "./topics/time-date";
 import { family } from "./topics/family";
 import { emotions } from "./topics/emotions";
 import { weather } from "./topics/weather";
+import { coreN5 } from "./topics/core-n5";
 
+/** All vocabulary entries across all topics */
 export const ALL_VOCAB: VocabEntry[] = [
   ...directions,
   ...restaurant,
@@ -34,25 +36,29 @@ export const ALL_VOCAB: VocabEntry[] = [
   ...family,
   ...emotions,
   ...weather,
+  // Core N5 words distributed across topics
+  ...coreN5,
 ];
 
+/** Vocabulary grouped by topic — computed from ALL_VOCAB so extra entries
+ *  in core-n5.ts automatically appear in the correct topic's pool. */
 export const VOCAB_BY_TOPIC: Record<TopicId, VocabEntry[]> = {
-  directions,
-  restaurant,
-  shop,
-  "meeting-people": meetingPeople,
-  museum,
-  hotel,
-  airport,
-  "train-station": trainStation,
-  clothing,
-  "doctor-hospital": doctorHospital,
-  "small-talk": smallTalk,
-  "numbers-counters": numbersCounters,
-  "time-date": timeDate,
-  family,
-  emotions,
-  weather,
+  directions: ALL_VOCAB.filter((e) => e.topicId === "directions"),
+  restaurant: ALL_VOCAB.filter((e) => e.topicId === "restaurant"),
+  shop: ALL_VOCAB.filter((e) => e.topicId === "shop"),
+  "meeting-people": ALL_VOCAB.filter((e) => e.topicId === "meeting-people"),
+  museum: ALL_VOCAB.filter((e) => e.topicId === "museum"),
+  hotel: ALL_VOCAB.filter((e) => e.topicId === "hotel"),
+  airport: ALL_VOCAB.filter((e) => e.topicId === "airport"),
+  "train-station": ALL_VOCAB.filter((e) => e.topicId === "train-station"),
+  clothing: ALL_VOCAB.filter((e) => e.topicId === "clothing"),
+  "doctor-hospital": ALL_VOCAB.filter((e) => e.topicId === "doctor-hospital"),
+  "small-talk": ALL_VOCAB.filter((e) => e.topicId === "small-talk"),
+  "numbers-counters": ALL_VOCAB.filter((e) => e.topicId === "numbers-counters"),
+  "time-date": ALL_VOCAB.filter((e) => e.topicId === "time-date"),
+  family: ALL_VOCAB.filter((e) => e.topicId === "family"),
+  emotions: ALL_VOCAB.filter((e) => e.topicId === "emotions"),
+  weather: ALL_VOCAB.filter((e) => e.topicId === "weather"),
 };
 
 export type { VocabEntry, TopicId } from "./types";
