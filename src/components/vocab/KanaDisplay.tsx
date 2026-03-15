@@ -47,6 +47,8 @@ export function KanaDisplay({
       {/* Main Japanese display — always white so it's visible on any bg */}
       <div
         className={`font-bold leading-tight text-center text-white ${sizeClass}`}
+        lang="ja"
+        translate="no"
         style={{
           fontFamily:
             '"Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", "MS Gothic", sans-serif',
@@ -59,6 +61,8 @@ export function KanaDisplay({
       {displayScript === "all" && japanese !== kana && (
         <div
           className="text-2xl text-gray-300"
+          lang="ja"
+          translate="no"
           style={{
             fontFamily:
               '"Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif',

@@ -12,7 +12,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    <html lang="de" translate="no">
+      <head>
+        {/* Prevent automatic browser translation — vocabulary must stay in Japanese */}
+        <meta name="google" content="notranslate" />
+      </head>
       <body className="min-h-screen antialiased">
         {children}
       </body>
