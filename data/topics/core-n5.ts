@@ -23,8 +23,8 @@ export const coreN5: VocabEntry[] = [
   { id: "cn5_015", topicId: "directions", type: "word", japanese: "公園", kana: "こうえん", romaji: "kouen", english: "park", tags: ["n5", "place"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_016", topicId: "directions", type: "word", japanese: "郵便局", kana: "ゆうびんきょく", romaji: "yuubinkyoku", english: "post office", tags: ["n5", "place"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_017", topicId: "directions", type: "word", japanese: "銀行", kana: "ぎんこう", romaji: "ginkou", english: "bank", tags: ["n5", "place"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn5_018", topicId: "directions", type: "word", japanese: "スーパー", kana: "スーパー", romaji: "su-pa-", english: "supermarket", tags: ["n5", "place"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn5_019", topicId: "directions", type: "word", japanese: "デパート", kana: "デパート", romaji: "depa-to", english: "department store", tags: ["n5", "place"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn5_018", topicId: "directions", type: "word", japanese: "スーパー", kana: "スーパー", romaji: "suupaa", english: "supermarket", tags: ["n5", "place"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn5_019", topicId: "directions", type: "word", japanese: "デパート", kana: "デパート", romaji: "depaato", english: "department store", tags: ["n5", "place"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_020", topicId: "directions", type: "word", japanese: "トイレ", kana: "トイレ", romaji: "toire", english: "toilet / restroom", tags: ["n5", "place"], jlptLevel: "N5", partOfSpeech: "noun" },
 
   // ── Common Verbs ──────────────────────────────────────────────────────────
@@ -124,11 +124,11 @@ export const coreN5: VocabEntry[] = [
   { id: "cn5_106", topicId: "restaurant", type: "word", japanese: "果物", kana: "くだもの", romaji: "kudamono", english: "fruit", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_107", topicId: "restaurant", type: "word", japanese: "卵", kana: "たまご", romaji: "tamago", english: "egg", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_108", topicId: "restaurant", type: "word", japanese: "牛乳", kana: "ぎゅうにゅう", romaji: "gyuunyuu", english: "milk", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn5_109", topicId: "restaurant", type: "word", japanese: "コーヒー", kana: "コーヒー", romaji: "ko-hi-", english: "coffee", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn5_109", topicId: "restaurant", type: "word", japanese: "コーヒー", kana: "コーヒー", romaji: "koohii", english: "coffee", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_110", topicId: "restaurant", type: "word", japanese: "お茶", kana: "おちゃ", romaji: "ocha", english: "tea (Japanese)", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_111", topicId: "restaurant", type: "word", japanese: "砂糖", kana: "さとう", romaji: "satou", english: "sugar", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_112", topicId: "restaurant", type: "word", japanese: "塩", kana: "しお", romaji: "shio", english: "salt", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn5_113", topicId: "restaurant", type: "word", japanese: "ラーメン", kana: "ラーメン", romaji: "ra-men", english: "ramen noodles", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn5_113", topicId: "restaurant", type: "word", japanese: "ラーメン", kana: "ラーメン", romaji: "raamen", english: "ramen noodles", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_114", topicId: "restaurant", type: "word", japanese: "すし", kana: "すし", romaji: "sushi", english: "sushi", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_115", topicId: "restaurant", type: "word", japanese: "天ぷら", kana: "てんぷら", romaji: "tenpura", english: "tempura", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
 
@@ -136,7 +136,7 @@ export const coreN5: VocabEntry[] = [
   { id: "cn5_116", topicId: "train-station", type: "word", japanese: "車", kana: "くるま", romaji: "kuruma", english: "car", tags: ["n5", "transport"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_117", topicId: "train-station", type: "word", japanese: "自転車", kana: "じてんしゃ", romaji: "jitensha", english: "bicycle", tags: ["n5", "transport"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_118", topicId: "train-station", type: "word", japanese: "バス", kana: "バス", romaji: "basu", english: "bus", tags: ["n5", "transport"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn5_119", topicId: "train-station", type: "word", japanese: "タクシー", kana: "タクシー", romaji: "takushi-", english: "taxi", tags: ["n5", "transport"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn5_119", topicId: "train-station", type: "word", japanese: "タクシー", kana: "タクシー", romaji: "takushii", english: "taxi", tags: ["n5", "transport"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_120", topicId: "train-station", type: "word", japanese: "乗る", kana: "のる", romaji: "noru", english: "to ride / board", tags: ["n5", "verb"], jlptLevel: "N5", partOfSpeech: "verb" },
   { id: "cn5_121", topicId: "train-station", type: "word", japanese: "降りる", kana: "おりる", romaji: "oriru", english: "to get off / descend", tags: ["n5", "verb"], jlptLevel: "N5", partOfSpeech: "verb" },
 
@@ -208,7 +208,7 @@ export const coreN5: VocabEntry[] = [
   // ── Hobbies & Free Time ───────────────────────────────────────────────────
   { id: "cn5_175", topicId: "small-talk", type: "word", japanese: "音楽", kana: "おんがく", romaji: "ongaku", english: "music", tags: ["n5", "hobby"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_176", topicId: "small-talk", type: "word", japanese: "映画", kana: "えいが", romaji: "eiga", english: "movie / film", tags: ["n5", "hobby"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn5_177", topicId: "small-talk", type: "word", japanese: "スポーツ", kana: "スポーツ", romaji: "supo-tsu", english: "sport(s)", tags: ["n5", "hobby"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn5_177", topicId: "small-talk", type: "word", japanese: "スポーツ", kana: "スポーツ", romaji: "supootsu", english: "sport(s)", tags: ["n5", "hobby"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_178", topicId: "small-talk", type: "word", japanese: "旅行", kana: "りょこう", romaji: "ryokou", english: "travel / trip", tags: ["n5", "hobby"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_179", topicId: "small-talk", type: "word", japanese: "買い物", kana: "かいもの", romaji: "kaimono", english: "shopping", tags: ["n5", "hobby"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn5_180", topicId: "small-talk", type: "word", japanese: "料理", kana: "りょうり", romaji: "ryouri", english: "cooking / dish", tags: ["n5", "hobby"], jlptLevel: "N5", partOfSpeech: "noun" },

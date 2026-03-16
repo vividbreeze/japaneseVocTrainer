@@ -143,13 +143,13 @@ export const coreN5Part2: VocabEntry[] = [
   { id: "cn52_125", topicId: "doctor-hospital", type: "word", japanese: "心臓", kana: "しんぞう", romaji: "shinzou", english: "heart", tags: ["n4", "body"], jlptLevel: "N4", partOfSpeech: "noun" },
 
   // ── More Food ─────────────────────────────────────────────────────────────
-  { id: "cn52_126", topicId: "restaurant", type: "word", japanese: "ジュース", kana: "ジュース", romaji: "ju-su", english: "juice", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn52_126", topicId: "restaurant", type: "word", japanese: "ジュース", kana: "ジュース", romaji: "juusu", english: "juice", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_127", topicId: "restaurant", type: "word", japanese: "ワイン", kana: "ワイン", romaji: "wain", english: "wine", tags: ["practical", "food"], jlptLevel: null, partOfSpeech: "noun" },
   { id: "cn52_128", topicId: "restaurant", type: "word", japanese: "そば", kana: "そば", romaji: "soba", english: "buckwheat noodles / soba", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_129", topicId: "restaurant", type: "word", japanese: "うどん", kana: "うどん", romaji: "udon", english: "udon noodles", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn52_130", topicId: "restaurant", type: "word", japanese: "カレー", kana: "カレー", romaji: "kare-", english: "curry", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn52_130", topicId: "restaurant", type: "word", japanese: "カレー", kana: "カレー", romaji: "karee", english: "curry", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_131", topicId: "restaurant", type: "word", japanese: "サラダ", kana: "サラダ", romaji: "sarada", english: "salad", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn52_132", topicId: "restaurant", type: "word", japanese: "スープ", kana: "スープ", romaji: "su-pu", english: "soup", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn52_132", topicId: "restaurant", type: "word", japanese: "スープ", kana: "スープ", romaji: "suupu", english: "soup", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_133", topicId: "restaurant", type: "word", japanese: "豆腐", kana: "とうふ", romaji: "toufu", english: "tofu", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_134", topicId: "restaurant", type: "word", japanese: "米", kana: "こめ", romaji: "kome", english: "rice (uncooked)", tags: ["n5", "food"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_135", topicId: "restaurant", type: "word", japanese: "油", kana: "あぶら", romaji: "abura", english: "oil / fat", tags: ["n4", "food"], jlptLevel: "N4", partOfSpeech: "noun" },
@@ -157,15 +157,15 @@ export const coreN5Part2: VocabEntry[] = [
   { id: "cn52_137", topicId: "restaurant", type: "word", japanese: "味噌", kana: "みそ", romaji: "miso", english: "miso (fermented soybean paste)", tags: ["n4", "food"], jlptLevel: "N4", partOfSpeech: "noun" },
   { id: "cn52_138", topicId: "restaurant", type: "word", japanese: "コップ", kana: "コップ", romaji: "koppu", english: "cup / glass", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_139", topicId: "restaurant", type: "word", japanese: "お皿", kana: "おさら", romaji: "osara", english: "plate / dish", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn52_140", topicId: "restaurant", type: "word", japanese: "スプーン", kana: "スプーン", romaji: "supu-n", english: "spoon", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
+  { id: "cn52_140", topicId: "restaurant", type: "word", japanese: "スプーン", kana: "スプーン", romaji: "supuun", english: "spoon", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
 
   // ── Shopping ──────────────────────────────────────────────────────────────
   { id: "cn52_141", topicId: "shop", type: "word", japanese: "値段", kana: "ねだん", romaji: "nedan", english: "price", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_142", topicId: "shop", type: "word", japanese: "割引", kana: "わりびき", romaji: "waribiki", english: "discount", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "noun" },
-  { id: "cn52_143", topicId: "shop", type: "word", japanese: "レシート", kana: "レシート", romaji: "reishi-to", english: "receipt", tags: ["practical"], jlptLevel: null, partOfSpeech: "noun" },
+  { id: "cn52_143", topicId: "shop", type: "word", japanese: "レシート", kana: "レシート", romaji: "reishiito", english: "receipt", tags: ["practical"], jlptLevel: null, partOfSpeech: "noun" },
   { id: "cn52_144", topicId: "shop", type: "word", japanese: "袋", kana: "ふくろ", romaji: "fukuro", english: "bag / sack", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_145", topicId: "shop", type: "word", japanese: "お釣り", kana: "おつり", romaji: "otsuri", english: "change (money back)", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
-  { id: "cn52_146", topicId: "shop", type: "word", japanese: "クレジットカード", kana: "クレジットカード", romaji: "kurejitto ka-do", english: "credit card", tags: ["practical"], jlptLevel: null, partOfSpeech: "noun" },
+  { id: "cn52_146", topicId: "shop", type: "word", japanese: "クレジットカード", kana: "クレジットカード", romaji: "kurejitto kaado", english: "credit card", tags: ["practical"], jlptLevel: null, partOfSpeech: "noun" },
   { id: "cn52_147", topicId: "shop", type: "word", japanese: "現金", kana: "げんきん", romaji: "genkin", english: "cash", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "noun" },
   { id: "cn52_148", topicId: "shop", type: "word", japanese: "サイズ", kana: "サイズ", romaji: "saizu", english: "size", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
   { id: "cn52_149", topicId: "shop", type: "word", japanese: "商品", kana: "しょうひん", romaji: "shouhin", english: "product / merchandise", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "noun" },
@@ -228,17 +228,17 @@ export const coreN5Part2: VocabEntry[] = [
   { id: "cn52_194", topicId: "family", type: "word", japanese: "子供", kana: "こども", romaji: "kodomo", english: "child", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "noun" },
 
   // ── Sentences: Restaurant ─────────────────────────────────────────────────
-  { id: "cn52_s_res01", topicId: "restaurant", type: "sentence", japanese: "アレルギーがあります。", kana: "アレルギーがあります。", romaji: "arerugi- ga arimasu.", english: "I have an allergy.", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
+  { id: "cn52_s_res01", topicId: "restaurant", type: "sentence", japanese: "アレルギーがあります。", kana: "アレルギーがあります。", romaji: "arerugii ga arimasu.", english: "I have an allergy.", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
   { id: "cn52_s_res02", topicId: "restaurant", type: "sentence", japanese: "辛くないものはありますか？", kana: "からくないものはありますか？", romaji: "karakunai mono wa arimasu ka?", english: "Do you have anything that isn't spicy?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_res03", topicId: "restaurant", type: "sentence", japanese: "テイクアウトできますか？", kana: "テイクアウトできますか？", romaji: "teikuauto dekimasu ka?", english: "Can I get this to go?", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
-  { id: "cn52_s_res04", topicId: "restaurant", type: "sentence", japanese: "このメニューを一つお願いします。", kana: "このメニューをひとつおねがいします。", romaji: "kono menyu- wo hitotsu onegaishimasu.", english: "One of this menu item, please.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
+  { id: "cn52_s_res04", topicId: "restaurant", type: "sentence", japanese: "このメニューを一つお願いします。", kana: "このメニューをひとつおねがいします。", romaji: "kono menyuu wo hitotsu onegaishimasu.", english: "One of this menu item, please.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_res05", topicId: "restaurant", type: "sentence", japanese: "お水をもう一杯ください。", kana: "おみずをもういっぱいください。", romaji: "omizu wo mou ippai kudasai.", english: "Another glass of water, please.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_res06", topicId: "restaurant", type: "sentence", japanese: "別々に払えますか？", kana: "べつべつにはらえますか？", romaji: "betsubetsu ni haraemasu ka?", english: "Can we pay separately?", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
   { id: "cn52_s_res07", topicId: "restaurant", type: "sentence", japanese: "とてもおいしかったです。", kana: "とてもおいしかったです。", romaji: "totemo oishikatta desu.", english: "It was very delicious.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
 
   // ── Sentences: Shopping ───────────────────────────────────────────────────
   { id: "cn52_s_sho01", topicId: "shop", type: "sentence", japanese: "いくらですか？", kana: "いくらですか？", romaji: "ikura desu ka?", english: "How much is it?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
-  { id: "cn52_s_sho02", topicId: "shop", type: "sentence", japanese: "クレジットカードで払えますか？", kana: "クレジットカードではらえますか？", romaji: "kurejitto ka-do de haraemasu ka?", english: "Can I pay by credit card?", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
+  { id: "cn52_s_sho02", topicId: "shop", type: "sentence", japanese: "クレジットカードで払えますか？", kana: "クレジットカードではらえますか？", romaji: "kurejitto kaado de haraemasu ka?", english: "Can I pay by credit card?", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
   { id: "cn52_s_sho03", topicId: "shop", type: "sentence", japanese: "これをください。", kana: "これをください。", romaji: "kore wo kudasai.", english: "I'll take this one.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_sho04", topicId: "shop", type: "sentence", japanese: "もう少し安くなりますか？", kana: "もうすこしやすくなりますか？", romaji: "mou sukoshi yasuku narimasu ka?", english: "Can you make it a bit cheaper?", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
   { id: "cn52_s_sho05", topicId: "shop", type: "sentence", japanese: "袋に入れてください。", kana: "ふくろにいれてください。", romaji: "fukuro ni irete kudasai.", english: "Please put it in a bag.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
@@ -260,7 +260,7 @@ export const coreN5Part2: VocabEntry[] = [
   { id: "cn52_s_hot03", topicId: "hotel", type: "sentence", japanese: "朝食は何時からですか？", kana: "ちょうしょくはなんじからですか？", romaji: "choushoku wa nanji kara desu ka?", english: "From what time is breakfast?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_hot04", topicId: "hotel", type: "sentence", japanese: "タオルをもう一枚ください。", kana: "タオルをもういちまいください。", romaji: "taoru wo mou ichimai kudasai.", english: "Please give me one more towel.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_hot05", topicId: "hotel", type: "sentence", japanese: "部屋を変えてもらえますか？", kana: "へやをかえてもらえますか？", romaji: "heya wo kaete moraemasu ka?", english: "Could I change my room?", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
-  { id: "cn52_s_hot06", topicId: "hotel", type: "sentence", japanese: "Wi-Fiのパスワードを教えてください。", kana: "わいふぁいのパスワードをおしえてください。", romaji: "waifai no pasuwa-do wo oshiete kudasai.", english: "Please tell me the Wi-Fi password.", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
+  { id: "cn52_s_hot06", topicId: "hotel", type: "sentence", japanese: "Wi-Fiのパスワードを教えてください。", kana: "わいふぁいのパスワードをおしえてください。", romaji: "waifai no pasuwaado wo oshiete kudasai.", english: "Please tell me the Wi-Fi password.", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
   { id: "cn52_s_hot07", topicId: "hotel", type: "sentence", japanese: "荷物を預かってもらえますか？", kana: "にもつをあずかってもらえますか？", romaji: "nimotsu wo azukatte moraemasu ka?", english: "Could you keep my luggage?", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
 
   // ── Sentences: Airport ────────────────────────────────────────────────────
@@ -294,7 +294,7 @@ export const coreN5Part2: VocabEntry[] = [
   { id: "cn52_s_doc01", topicId: "doctor-hospital", type: "sentence", japanese: "頭が痛いです。", kana: "あたまがいたいです。", romaji: "atama ga itai desu.", english: "I have a headache.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_doc02", topicId: "doctor-hospital", type: "sentence", japanese: "熱があります。", kana: "ねつがあります。", romaji: "netsu ga arimasu.", english: "I have a fever.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_doc03", topicId: "doctor-hospital", type: "sentence", japanese: "この薬を一日三回飲んでください。", kana: "このくすりをいちにちさんかいのんでください。", romaji: "kono kusuri wo ichinichi sankai nonde kudasai.", english: "Please take this medicine three times a day.", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
-  { id: "cn52_s_doc04", topicId: "doctor-hospital", type: "sentence", japanese: "アレルギーはありますか？", kana: "アレルギーはありますか？", romaji: "arerugi- wa arimasu ka?", english: "Do you have any allergies?", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
+  { id: "cn52_s_doc04", topicId: "doctor-hospital", type: "sentence", japanese: "アレルギーはありますか？", kana: "アレルギーはありますか？", romaji: "arerugii wa arimasu ka?", english: "Do you have any allergies?", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
   { id: "cn52_s_doc05", topicId: "doctor-hospital", type: "sentence", japanese: "救急車を呼んでください！", kana: "きゅうきゅうしゃをよんでください！", romaji: "kyuukyuusha wo yonde kudasai!", english: "Please call an ambulance!", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
   { id: "cn52_s_doc06", topicId: "doctor-hospital", type: "sentence", japanese: "どこが痛いですか？", kana: "どこがいたいですか？", romaji: "doko ga itai desu ka?", english: "Where does it hurt?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_doc07", topicId: "doctor-hospital", type: "sentence", japanese: "いつから具合が悪いですか？", kana: "いつからぐあいがわるいですか？", romaji: "itsu kara guai ga warui desu ka?", english: "Since when have you been feeling ill?", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
@@ -324,7 +324,7 @@ export const coreN5Part2: VocabEntry[] = [
   { id: "cn52_s_num04", topicId: "numbers-counters", type: "sentence", japanese: "何人ですか？", kana: "なんにんですか？", romaji: "nannin desu ka?", english: "How many people?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_num05", topicId: "numbers-counters", type: "sentence", japanese: "百円玉がありますか？", kana: "ひゃくえんだまがありますか？", romaji: "hyakuendama ga arimasu ka?", english: "Do you have a 100-yen coin?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_num06", topicId: "numbers-counters", type: "sentence", japanese: "一万円でお釣りをください。", kana: "いちまんえんでおつりをください。", romaji: "ichiman en de otsuri wo kudasai.", english: "Here's 10,000 yen; keep the change.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
-  { id: "cn52_s_num07", topicId: "numbers-counters", type: "sentence", japanese: "三番ホームから出発します。", kana: "さんばんホームからしゅっぱつします。", romaji: "sanban ho-mu kara shuppatsu shimasu.", english: "It departs from platform 3.", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
+  { id: "cn52_s_num07", topicId: "numbers-counters", type: "sentence", japanese: "三番ホームから出発します。", kana: "さんばんホームからしゅっぱつします。", romaji: "sanban hoomu kara shuppatsu shimasu.", english: "It departs from platform 3.", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
 
   // ── Sentences: Time & Date ────────────────────────────────────────────────
   { id: "cn52_s_tdt01", topicId: "time-date", type: "sentence", japanese: "今何時ですか？", kana: "いまなんじですか？", romaji: "ima nanji desu ka?", english: "What time is it now?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
@@ -367,5 +367,5 @@ export const coreN5Part2: VocabEntry[] = [
   { id: "cn52_s_clo02", topicId: "clothing", type: "sentence", japanese: "もっと大きいサイズはありますか？", kana: "もっとおおきいサイズはありますか？", romaji: "motto ookii saizu wa arimasu ka?", english: "Do you have a bigger size?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "cn52_s_clo03", topicId: "clothing", type: "sentence", japanese: "この服は洗濯機で洗えますか？", kana: "このふくはせんたくきであらえますか？", romaji: "kono fuku wa sentakuki de araemasu ka?", english: "Can these clothes be machine washed?", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
   { id: "cn52_s_clo04", topicId: "clothing", type: "sentence", japanese: "もう少し安いものはありませんか？", kana: "もうすこしやすいものはありませんか？", romaji: "mou sukoshi yasui mono wa arimasen ka?", english: "Don't you have anything a bit cheaper?", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
-  { id: "cn52_s_clo05", topicId: "clothing", type: "sentence", japanese: "このコートはとても暖かいです。", kana: "このコートはとてもあたたかいです。", romaji: "kono ko-to wa totemo atatakai desu.", english: "This coat is very warm.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
+  { id: "cn52_s_clo05", topicId: "clothing", type: "sentence", japanese: "このコートはとても暖かいです。", kana: "このコートはとてもあたたかいです。", romaji: "kono kooto wa totemo atatakai desu.", english: "This coat is very warm.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
 ];

@@ -26,5 +26,5 @@ export const numbersCounters: VocabEntry[] = [
   // Sentences
   { id: "num_s01", topicId: "numbers-counters", type: "sentence", japanese: "一枚ください。", kana: "いちまいください。", romaji: "ichimai kudasai.", english: "One (sheet/ticket), please.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
   { id: "num_s02", topicId: "numbers-counters", type: "sentence", japanese: "三人です。", kana: "さんにんです。", romaji: "sannin desu.", english: "There are three of us.", tags: ["n5"], jlptLevel: "N5", partOfSpeech: "expression" },
-  { id: "num_s03", topicId: "numbers-counters", type: "sentence", japanese: "コーヒーを二杯お願いします。", kana: "コーヒーをにはいおねがいします。", romaji: "ko-hi- wo nihai onegaishimasu.", english: "Two coffees, please.", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
+  { id: "num_s03", topicId: "numbers-counters", type: "sentence", japanese: "コーヒーを二杯お願いします。", kana: "コーヒーをにはいおねがいします。", romaji: "koohii wo nihai onegaishimasu.", english: "Two coffees, please.", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
 ];

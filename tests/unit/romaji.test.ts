@@ -37,6 +37,26 @@ describe("normalizeRomaji", () => {
   it("trims whitespace", () => {
     expect(normalizeRomaji("  migi  ")).toBe("migi");
   });
+
+  it("normalizes doubled vowels aa/ee/ii to single (long vowel tolerance)", () => {
+    expect(normalizeRomaji("koohii")).toBe("kohi");   // コーヒー: oo→o, ii→i
+    expect(normalizeRomaji("biiru")).toBe("biru");    // ビール: ii→i
+    expect(normalizeRomaji("suupaa")).toBe("supa");   // スーパー: uu→u, aa→a
+    expect(normalizeRomaji("raamen")).toBe("ramen");  // ラーメン: aa→a
+  });
+
+  it("strips dash long-vowel markers (legacy format still matches)", () => {
+    expect(normalizeRomaji("ko-hi-")).toBe("kohi");   // dash removed
+    expect(normalizeRomaji("bi-ru")).toBe("biru");
+  });
+
+  it("doubled vowel and dash both match stored doubled-vowel romaji", () => {
+    // Stored as "koohii" in data — user may type any form
+    expect(romajiMatches("koohii", "koohii")).toBe(true);
+    expect(romajiMatches("kohii",  "koohii")).toBe(true);
+    expect(romajiMatches("kohi",   "koohii")).toBe(true);
+    expect(romajiMatches("ko-hi-", "koohii")).toBe(true);
+  });
 });
 
 describe("romajiMatches", () => {

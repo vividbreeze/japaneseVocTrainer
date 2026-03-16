@@ -19,7 +19,7 @@ export const hotel: VocabEntry[] = [
   // Sentences
   { id: "hot_s01", topicId: "hotel", type: "sentence", japanese: "予約した田中です。", kana: "よやくしたたなかです。", romaji: "yoyaku shita Tanaka desu.", english: "I have a reservation. My name is Tanaka.", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
   { id: "hot_s02", topicId: "hotel", type: "sentence", japanese: "チェックインをお願いします。", kana: "チェックインをおねがいします。", romaji: "chekku in wo onegaishimasu.", english: "I'd like to check in, please.", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
-  { id: "hot_s03", topicId: "hotel", type: "sentence", japanese: "Wi-Fiのパスワードを教えてください。", kana: "わいふぁいのパスワードをおしえてください。", romaji: "wai fai no pasuwa-do wo oshiete kudasai.", english: "Please tell me the Wi-Fi password.", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
+  { id: "hot_s03", topicId: "hotel", type: "sentence", japanese: "Wi-Fiのパスワードを教えてください。", kana: "わいふぁいのパスワードをおしえてください。", romaji: "wai fai no pasuwaado wo oshiete kudasai.", english: "Please tell me the Wi-Fi password.", tags: ["practical"], jlptLevel: null, partOfSpeech: "expression" },
   { id: "hot_s04", topicId: "hotel", type: "sentence", japanese: "朝食は何時からですか？", kana: "ちょうしょくはなんじからですか？", romaji: "choushoku wa nanji kara desu ka?", english: "What time does breakfast start?", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
   { id: "hot_s05", topicId: "hotel", type: "sentence", japanese: "荷物を預かってもらえますか？", kana: "にもつをあずかってもらえますか？", romaji: "nimotsu wo azukatte moraemasu ka?", english: "Can you keep my luggage?", tags: ["n4"], jlptLevel: "N4", partOfSpeech: "expression" },
 ];
