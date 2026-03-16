@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { FreeInputMode } from "@/components/modes/FreeInputMode";
 import { useSession } from "@/hooks/useSession";
 import { useSettings } from "@/hooks/useSettings";
+import { SettingsPanel } from "@/components/settings/SettingsPanel";
 import type { TopicId } from "@/types/vocab";
 import type { CardType } from "@/types/settings";
 
@@ -18,8 +19,9 @@ export default function FreeInputPage({
   const { topicId } = use(params);
   const { type } = use(searchParams);
   const router = useRouter();
-  const { settings, isLoading: settingsLoading } = useSettings();
+  const { settings, updateSettings, isLoading: settingsLoading } = useSettings();
   const [correctCount, setCorrectCount] = useState(0);
+  const [showSettings, setShowSettings] = useState(false);
 
   const cardType: CardType = (type as CardType) ?? settings?.cardType ?? "word";
 
@@ -49,8 +51,17 @@ export default function FreeInputPage({
           >
             ← Back
           </button>
-          <div className="text-sm text-gray-400">
-            {dueCount} due · {newCount} new · {total} total
+          <div className="flex items-center gap-3">
+            <div className="text-sm text-gray-400">
+              {dueCount} fällig · {newCount} neu · {total} gesamt
+            </div>
+            <button
+              onClick={() => setShowSettings(true)}
+              className="p-2 rounded-lg hover:bg-[#2a2a4a] transition-colors text-gray-300 hover:text-white text-xl"
+              aria-label="Einstellungen"
+            >
+              ⚙️
+            </button>
           </div>
         </div>
       </header>
@@ -66,6 +77,14 @@ export default function FreeInputPage({
           correctCount={correctCount}
         />
       </main>
+
+      {showSettings && settings && (
+        <SettingsPanel
+          settings={settings}
+          onUpdate={updateSettings}
+          onClose={() => setShowSettings(false)}
+        />
+      )}
     </div>
   );
 }

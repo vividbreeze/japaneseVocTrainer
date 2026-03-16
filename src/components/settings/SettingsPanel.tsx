@@ -30,7 +30,7 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
       {/* Panel */}
       <div className="relative bg-[#1a1a2e] border border-[#2a2a4a] rounded-t-2xl sm:rounded-2xl w-full sm:w-[480px] max-h-[90vh] overflow-y-auto p-6 space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold">Settings</h2>
+          <h2 className="text-xl font-bold">Einstellungen</h2>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-white text-2xl leading-none"
@@ -42,19 +42,27 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
 
         {/* Display Script */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-300">Display Script</label>
+          <label className="text-sm font-medium text-gray-300">Anzeigeschrift</label>
           <div className="grid grid-cols-2 gap-2">
-            {(["hiragana", "katakana", "kanji", "all"] as DisplayScript[]).map((script) => (
+            {(
+              [
+                { value: "hiragana", label: "Kana", sub: "ひ・カ natürlich" },
+                { value: "katakana", label: "Katakana", sub: "alles in カタカナ" },
+                { value: "kanji",    label: "Kanji + Kana", sub: "漢字 wie im echten JP" },
+                { value: "all",      label: "Alle Zeichen", sub: "漢字 + ひ + カ" },
+              ] as { value: DisplayScript; label: string; sub: string }[]
+            ).map(({ value, label, sub }) => (
               <button
-                key={script}
-                onClick={() => onUpdate({ displayScript: script })}
-                className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
-                  settings.displayScript === script
+                key={value}
+                onClick={() => onUpdate({ displayScript: value })}
+                className={`py-2 px-3 rounded-lg text-left transition-colors ${
+                  settings.displayScript === value
                     ? "bg-indigo-600 text-white"
                     : "bg-[#2a2a4a] text-gray-300 hover:bg-[#3a3a5a]"
                 }`}
               >
-                {script === "all" ? "All scripts" : script.charAt(0).toUpperCase() + script.slice(1)}
+                <div className="text-sm font-medium">{label}</div>
+                <div className={`text-xs mt-0.5 ${settings.displayScript === value ? "text-indigo-200" : "text-gray-500"}`}>{sub}</div>
               </button>
             ))}
           </div>
@@ -62,7 +70,7 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
 
         {/* Input Mode */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-300">Input Mode</label>
+          <label className="text-sm font-medium text-gray-300">Eingabemodus (Freie Eingabe)</label>
           <div className="grid grid-cols-2 gap-2">
             {(["romaji", "kana"] as InputMode[]).map((mode) => (
               <button
@@ -82,7 +90,7 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
 
         {/* Card Type */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-300">Card Type</label>
+          <label className="text-sm font-medium text-gray-300">Kartentyp</label>
           <div className="grid grid-cols-2 gap-2">
             {(["word", "sentence"] as CardType[]).map((type) => (
               <button
@@ -94,7 +102,7 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
                     : "bg-[#2a2a4a] text-gray-300 hover:bg-[#3a3a5a]"
                 }`}
               >
-                {type === "word" ? "Words" : "Sentences"}
+                {type === "word" ? "Wörter" : "Sätze"}
               </button>
             ))}
           </div>
@@ -103,12 +111,12 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
         {/* Toggles */}
         <div className="space-y-3">
           <Toggle
-            label="Show Romaji hint"
+            label="Romaji-Hinweis anzeigen"
             value={settings.showRomaji}
             onChange={(v) => onUpdate({ showRomaji: v })}
           />
           <Toggle
-            label="Show English"
+            label="Englisch anzeigen"
             value={settings.showEnglish}
             onChange={(v) => onUpdate({ showEnglish: v })}
           />
@@ -121,23 +129,23 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
               onClick={() => setConfirmReset(true)}
               className="w-full py-2 px-4 rounded-lg text-sm font-medium bg-red-900/30 text-red-400 hover:bg-red-900/50 transition-colors"
             >
-              Reset All Progress
+              Lernfortschritt zurücksetzen
             </button>
           ) : (
             <div className="space-y-2">
-              <p className="text-sm text-red-400 text-center">Are you sure? This cannot be undone.</p>
+              <p className="text-sm text-red-400 text-center">Sicher? Das kann nicht rückgängig gemacht werden.</p>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   onClick={() => setConfirmReset(false)}
                   className="py-2 px-4 rounded-lg text-sm font-medium bg-[#2a2a4a] text-gray-300"
                 >
-                  Cancel
+                  Abbrechen
                 </button>
                 <button
                   onClick={handleReset}
                   className="py-2 px-4 rounded-lg text-sm font-medium bg-red-600 text-white hover:bg-red-700"
                 >
-                  Reset
+                  Zurücksetzen
                 </button>
               </div>
             </div>

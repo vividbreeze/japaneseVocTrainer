@@ -17,7 +17,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const topicId = searchParams.get("topicId");
   const cardType = searchParams.get("type") ?? "word";
-  const limit = Math.min(parseInt(searchParams.get("limit") ?? "20"), 50);
+  const limit = Math.min(parseInt(searchParams.get("limit") ?? "50"), 200);
 
   if (!topicId) {
     return NextResponse.json({ error: "topicId is required" }, { status: 400 });
