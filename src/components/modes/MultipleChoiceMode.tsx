@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { KanaDisplay } from "@/components/vocab/KanaDisplay";
+import { PartOfSpeechBadge } from "@/components/vocab/PartOfSpeechBadge";
 import { ProgressBar } from "@/components/quiz/ProgressBar";
 import { buildChoices } from "@/lib/similarity";
 import type { UserSettings } from "@/types/settings";
@@ -78,7 +79,7 @@ export function MultipleChoiceMode({
 
       {/* Question */}
       <div className="bg-[#1a1a2e] border border-[#2a2a4a] rounded-2xl p-8 flex flex-col items-center gap-4">
-        <div className="text-xs text-gray-500 uppercase tracking-wider">What does this mean?</div>
+        <div className="text-xs text-gray-500 uppercase tracking-wider">Was bedeutet das?</div>
         <KanaDisplay
           japanese={entry.japanese}
           kana={entry.kana}
@@ -87,6 +88,9 @@ export function MultipleChoiceMode({
           showRomaji={settings.showRomaji}
           size="xl"
         />
+        {settings.showPartOfSpeech && entry.partOfSpeech && (
+          <PartOfSpeechBadge pos={entry.partOfSpeech} />
+        )}
       </div>
 
       {/* Choices */}

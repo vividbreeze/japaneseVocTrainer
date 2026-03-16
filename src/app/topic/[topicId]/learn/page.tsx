@@ -34,7 +34,7 @@ export default function LearnPage({
     dueCount,
     newCount,
     total,
-  } = useSession(topicId as TopicId, "learn", cardType);
+  } = useSession(topicId as TopicId, "learn", cardType, settings?.sessionSize ?? 20);
 
   if (settingsLoading || isLoading || !settings) {
     return (

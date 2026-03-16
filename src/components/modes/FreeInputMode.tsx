@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { KanaDisplay } from "@/components/vocab/KanaDisplay";
+import { PartOfSpeechBadge } from "@/components/vocab/PartOfSpeechBadge";
 import { ProgressBar } from "@/components/quiz/ProgressBar";
 import { normalizeRomaji, romajiMatches, kanaMatches } from "@/lib/romaji";
 import type { UserSettings } from "@/types/settings";
@@ -86,10 +87,10 @@ export function FreeInputMode({
 
       {/* Prompt: show English, ask for Japanese */}
       <div className="bg-[#1a1a2e] border border-[#2a2a4a] rounded-2xl p-8 flex flex-col items-center gap-4">
-        <div className="text-xs text-gray-500 uppercase tracking-wider">How do you say...</div>
+        <div className="text-xs text-gray-500 uppercase tracking-wider">Wie sagt man...</div>
         <div className="text-3xl font-bold text-white text-center">{entry.english}</div>
-        {settings.showEnglish && entry.partOfSpeech && (
-          <div className="text-sm text-gray-500 italic">{entry.partOfSpeech}</div>
+        {settings.showPartOfSpeech && entry.partOfSpeech && (
+          <PartOfSpeechBadge pos={entry.partOfSpeech} />
         )}
       </div>
 

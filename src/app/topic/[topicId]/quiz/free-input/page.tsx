@@ -26,7 +26,7 @@ export default function FreeInputPage({
   const cardType: CardType = (type as CardType) ?? settings?.cardType ?? "word";
 
   const { entries: sessionEntries, currentIndex, isComplete, isLoading, advance, dueCount, newCount, total } =
-    useSession(topicId as TopicId, "free-input", cardType);
+    useSession(topicId as TopicId, "free-input", cardType, settings?.sessionSize ?? 20);
 
   if (settingsLoading || isLoading || !settings) {
     return (

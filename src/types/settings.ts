@@ -10,7 +10,9 @@ export interface UserSettings {
   inputMode: InputMode;
   showRomaji: boolean;
   showEnglish: boolean;
+  showPartOfSpeech: boolean;
   cardType: CardType;
+  sessionSize: number; // cards per session; 0 = all
   topicsEnabled: TopicId[];
   updatedAt: number;
 }
@@ -20,6 +22,8 @@ export const DEFAULT_SETTINGS: Omit<UserSettings, "id" | "updatedAt"> = {
   inputMode: "romaji",
   showRomaji: true,
   showEnglish: true,
+  showPartOfSpeech: false,
   cardType: "word",
+  sessionSize: 20,
   topicsEnabled: [],
 };

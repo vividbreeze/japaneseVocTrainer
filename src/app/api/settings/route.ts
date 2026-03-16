@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { db } from "@db/client";
 import { settings } from "@db/schema";
 import { eq } from "drizzle-orm";
-import type { DisplayScript, InputMode, CardType } from "@/types/settings";
+import type { DisplayScript, InputMode, CardType, UserSettings } from "@/types/settings";
 import type { TopicId } from "@/types/vocab";
 
 export async function GET() {
@@ -18,7 +18,9 @@ export async function GET() {
         inputMode: "romaji",
         showRomaji: true,
         showEnglish: true,
+        showPartOfSpeech: false,
         cardType: "word",
+        sessionSize: 20,
         topicsEnabled: "[]",
         updatedAt: now,
       });
@@ -28,15 +30,19 @@ export async function GET() {
         inputMode: "romaji",
         showRomaji: true,
         showEnglish: true,
+        showPartOfSpeech: false,
         cardType: "word",
+        sessionSize: 20,
         topicsEnabled: [],
         updatedAt: now,
-      });
+      } satisfies UserSettings);
     }
 
     const row = rows[0];
     return NextResponse.json({
       ...row,
+      showPartOfSpeech: row.showPartOfSpeech ?? false,
+      sessionSize: row.sessionSize ?? 20,
       topicsEnabled: JSON.parse(row.topicsEnabled ?? "[]") as TopicId[],
     });
   } catch (error) {
@@ -52,7 +58,9 @@ export async function PUT(request: Request) {
       inputMode: InputMode;
       showRomaji: boolean;
       showEnglish: boolean;
+      showPartOfSpeech: boolean;
       cardType: CardType;
+      sessionSize: number;
       topicsEnabled: TopicId[];
     }>;
 
@@ -62,7 +70,9 @@ export async function PUT(request: Request) {
     if (body.inputMode !== undefined) updates.inputMode = body.inputMode;
     if (body.showRomaji !== undefined) updates.showRomaji = body.showRomaji;
     if (body.showEnglish !== undefined) updates.showEnglish = body.showEnglish;
+    if (body.showPartOfSpeech !== undefined) updates.showPartOfSpeech = body.showPartOfSpeech;
     if (body.cardType !== undefined) updates.cardType = body.cardType;
+    if (body.sessionSize !== undefined) updates.sessionSize = body.sessionSize;
     if (body.topicsEnabled !== undefined) updates.topicsEnabled = JSON.stringify(body.topicsEnabled);
 
     await db.update(settings).set(updates).where(eq(settings.id, 1));
@@ -71,6 +81,8 @@ export async function PUT(request: Request) {
     const row = rows[0];
     return NextResponse.json({
       ...row,
+      showPartOfSpeech: row.showPartOfSpeech ?? false,
+      sessionSize: row.sessionSize ?? 20,
       topicsEnabled: JSON.parse(row.topicsEnabled ?? "[]") as TopicId[],
     });
   } catch (error) {

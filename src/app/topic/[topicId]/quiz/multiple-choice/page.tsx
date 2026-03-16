@@ -27,7 +27,7 @@ export default function MultipleChoicePage({
   const cardType: CardType = (type as CardType) ?? settings?.cardType ?? "word";
 
   const { entries: sessionEntries, currentIndex, isComplete, isLoading, advance, dueCount, newCount, total } =
-    useSession(topicId as TopicId, "multiple-choice", cardType);
+    useSession(topicId as TopicId, "multiple-choice", cardType, settings?.sessionSize ?? 20);
 
   // Load full topic vocab for distractor pool
   const { entries: allEntries } = useVocab(topicId as TopicId, cardType);

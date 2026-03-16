@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { KanaDisplay } from "@/components/vocab/KanaDisplay";
+import { PartOfSpeechBadge } from "@/components/vocab/PartOfSpeechBadge";
 import { ProgressBar } from "@/components/quiz/ProgressBar";
 import type { UserSettings } from "@/types/settings";
 import type { SessionEntry } from "@/hooks/useSession";
@@ -51,9 +52,9 @@ export function LearnMode({
           onClick={() => setFlipped(true)}
           className="w-full min-h-[280px] bg-[#1a1a2e] border-2 border-[#2a2a4a] hover:border-indigo-500/50 rounded-2xl p-8 flex flex-col items-center justify-center gap-5 transition-colors cursor-pointer"
         >
-          <div className="text-xs text-gray-500 uppercase tracking-widest font-medium">
-            {entry.partOfSpeech ?? entry.type}
-          </div>
+          {settings.showPartOfSpeech && entry.partOfSpeech && (
+            <PartOfSpeechBadge pos={entry.partOfSpeech} />
+          )}
 
           <KanaDisplay
             japanese={entry.japanese}
@@ -83,6 +84,9 @@ export function LearnMode({
           <div className="text-2xl font-bold text-white text-center">{entry.english}</div>
 
           <div className="flex flex-wrap gap-2 justify-center">
+            {settings.showPartOfSpeech && entry.partOfSpeech && (
+              <PartOfSpeechBadge pos={entry.partOfSpeech} />
+            )}
             {entry.jlptLevel && (
               <span className="text-xs bg-indigo-600/30 text-indigo-300 px-2 py-0.5 rounded-full font-medium">
                 {entry.jlptLevel}

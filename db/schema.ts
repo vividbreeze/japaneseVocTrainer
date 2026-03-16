@@ -43,6 +43,8 @@ export const settings = sqliteTable("settings", {
     .notNull()
     .default("word"),
   topicsEnabled: text("topics_enabled").notNull().default("[]"), // JSON array
+  showPartOfSpeech: integer("show_part_of_speech", { mode: "boolean" }).notNull().default(false),
+  sessionSize: integer("session_size").notNull().default(20), // 0 = all
   updatedAt: integer("updated_at").notNull(),
 });
 

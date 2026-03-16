@@ -108,6 +108,26 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
           </div>
         </div>
 
+        {/* Session Size */}
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-300">Wörter pro Einheit</label>
+          <div className="grid grid-cols-3 gap-2">
+            {([10, 20, 30, 50, 100, 0] as const).map((n) => (
+              <button
+                key={n}
+                onClick={() => onUpdate({ sessionSize: n })}
+                className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
+                  settings.sessionSize === n
+                    ? "bg-indigo-600 text-white"
+                    : "bg-[#2a2a4a] text-gray-300 hover:bg-[#3a3a5a]"
+                }`}
+              >
+                {n === 0 ? "Alle" : n}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Toggles */}
         <div className="space-y-3">
           <Toggle
@@ -119,6 +139,11 @@ export function SettingsPanel({ settings, onUpdate, onClose }: SettingsPanelProp
             label="Englisch anzeigen"
             value={settings.showEnglish}
             onChange={(v) => onUpdate({ showEnglish: v })}
+          />
+          <Toggle
+            label="Worttyp anzeigen (Verb, Substantiv …)"
+            value={settings.showPartOfSpeech}
+            onChange={(v) => onUpdate({ showPartOfSpeech: v })}
           />
         </div>
 

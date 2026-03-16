@@ -32,7 +32,8 @@ interface UseSessionResult {
 export function useSession(
   topicId: TopicId,
   mode: SessionMode,
-  type: EntryType
+  type: EntryType,
+  sessionSize: number = 20
 ): UseSessionResult {
   const [entries, setEntries] = useState<SessionEntry[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,6 +54,7 @@ export function useSession(
           topicId,
           mode,
           type,
+          limit: sessionSize === 0 ? "9999" : String(sessionSize),
         });
 
         const res = await fetch(`/api/session?${params.toString()}`);
@@ -77,7 +79,7 @@ export function useSession(
 
     fetchSession();
     return () => { cancelled = true; };
-  }, [topicId, mode, type]);
+  }, [topicId, mode, type, sessionSize]);
 
   const advance = useCallback(async (quality?: number): Promise<void> => {
     const entry = entries[currentIndex];
