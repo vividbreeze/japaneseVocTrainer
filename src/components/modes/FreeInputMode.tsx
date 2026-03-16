@@ -33,14 +33,21 @@ export function FreeInputMode({
   const [feedback, setFeedback] = useState<FeedbackState>("idle");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const entry = entries[currentIndex];
+  const entry = entries[0]; // queue: current card is always first
 
-  // Auto-focus input when entry changes
+  // Reset and focus when a new card appears (entry ID changes)
   useEffect(() => {
     setInput("");
     setFeedback("idle");
     inputRef.current?.focus();
-  }, [currentIndex]);
+  }, [entry?.id]);
+
+  // Re-focus whenever feedback clears back to idle (covers same-card repeats)
+  useEffect(() => {
+    if (feedback === "idle") {
+      inputRef.current?.focus();
+    }
+  }, [feedback]);
 
   if (isComplete) {
     return <CompletionScreen total={correctCount} onBack={onBack} />;
@@ -67,6 +74,8 @@ export function FreeInputMode({
       onAdvance(isCorrect ? 4 : 0);
       setInput("");
       setFeedback("idle");
+      // focus is set by the feedback-idle effect above, but belt-and-suspenders:
+      requestAnimationFrame(() => inputRef.current?.focus());
     }, 1500);
   };
 
@@ -74,6 +83,7 @@ export function FreeInputMode({
     onAdvance(0);
     setInput("");
     setFeedback("idle");
+    requestAnimationFrame(() => inputRef.current?.focus());
   };
 
   const placeholder =
