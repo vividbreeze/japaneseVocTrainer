@@ -24,9 +24,10 @@ interface UseSessionResult {
   advance: (quality?: number) => Promise<void>;
   isComplete: boolean;
   isLoading: boolean;
+  masteredCount: number;
+  total: number;
   dueCount: number;
   newCount: number;
-  total: number;
 }
 
 export function useSession(
@@ -35,19 +36,18 @@ export function useSession(
   type: EntryType,
   sessionSize: number = 20
 ): UseSessionResult {
-  const [entries, setEntries] = useState<SessionEntry[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [queue, setQueue] = useState<SessionEntry[]>([]);
+  const [masteredCount, setMasteredCount] = useState(0);
+  const [originalTotal, setOriginalTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [dueCount, setDueCount] = useState(0);
   const [newCount, setNewCount] = useState(0);
-  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
 
     async function fetchSession() {
       setIsLoading(true);
-      setCurrentIndex(0);
 
       try {
         const params = new URLSearchParams({
@@ -62,15 +62,18 @@ export function useSession(
         const data: SessionResponse = await res.json();
 
         if (!cancelled) {
-          setEntries(data.entries);
+          setQueue(data.entries);
+          setOriginalTotal(data.entries.length);
+          setMasteredCount(0);
           setDueCount(data.dueCount);
           setNewCount(data.newCount);
-          setTotal(data.total);
         }
       } catch (err) {
         console.error("useSession fetch error:", err);
         if (!cancelled) {
-          setEntries([]);
+          setQueue([]);
+          setOriginalTotal(0);
+          setMasteredCount(0);
         }
       } finally {
         if (!cancelled) setIsLoading(false);
@@ -82,9 +85,12 @@ export function useSession(
   }, [topicId, mode, type, sessionSize]);
 
   const advance = useCallback(async (quality?: number): Promise<void> => {
-    const entry = entries[currentIndex];
+    const entry = queue[0];
+    if (!entry) return;
 
-    if (entry && quality !== undefined) {
+    let updatedEntry: SessionEntry = entry;
+
+    if (quality !== undefined) {
       try {
         const res = await fetch(`/api/progress/${entry.id}`, {
           method: "PATCH",
@@ -93,33 +99,35 @@ export function useSession(
         });
         if (!res.ok) throw new Error(`Failed to submit rating: ${res.status}`);
         const updatedProgress: ProgressRecord = await res.json();
-
-        // Update the progress on the entry in state
-        setEntries((prev) =>
-          prev.map((e, i) =>
-            i === currentIndex ? { ...e, progress: updatedProgress } : e
-          )
-        );
+        updatedEntry = { ...entry, progress: updatedProgress };
       } catch (err) {
         console.error("useSession advance/submit error:", err);
       }
     }
 
-    setCurrentIndex((prev) => prev + 1);
-  }, [entries, currentIndex]);
+    if (quality !== undefined && quality >= 3) {
+      // Mastered: remove from queue
+      setQueue((prev) => prev.slice(1));
+      setMasteredCount((prev) => prev + 1);
+    } else {
+      // Not mastered or skipped: move to end of queue
+      setQueue((prev) => [...prev.slice(1), updatedEntry]);
+    }
+  }, [queue]);
 
-  const isComplete = !isLoading && currentIndex >= entries.length;
-  const currentEntry = entries[currentIndex] ?? null;
+  const isComplete = queue.length === 0 && !isLoading && originalTotal > 0;
+  const currentEntry = queue[0] ?? null;
 
   return {
-    entries,
-    currentIndex,
+    entries: queue,
+    currentIndex: 0,
     currentEntry,
     advance,
     isComplete,
     isLoading,
+    masteredCount,
+    total: originalTotal,
     dueCount,
     newCount,
-    total,
   };
 }

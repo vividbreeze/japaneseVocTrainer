@@ -37,14 +37,14 @@ export function LearnMode({
   };
 
   if (isComplete) {
-    return <CompletionScreen total={entries.length} correct={correctCount} onBack={onBack} />;
+    return <CompletionScreen total={correctCount} onBack={onBack} />;
   }
 
   if (!entry) return null;
 
   return (
     <div className="flex flex-col gap-6 w-full max-w-xl mx-auto">
-      <ProgressBar current={currentIndex} total={entries.length} correct={correctCount} />
+      <ProgressBar current={correctCount} total={entries.length + correctCount} correct={correctCount} />
 
       {!flipped ? (
         /* FRONT: Japanese word, tap to reveal */
@@ -139,15 +139,17 @@ export function LearnMode({
   );
 }
 
-function CompletionScreen({ total, correct, onBack }: { total: number; correct: number; onBack: () => void }) {
-  const pct = Math.round((correct / Math.max(total, 1)) * 100);
+function CompletionScreen({ total, onBack }: { total: number; onBack: () => void }) {
   return (
     <div className="flex flex-col items-center gap-6 text-center max-w-sm mx-auto">
-      <div className="text-6xl">{pct >= 80 ? "🎉" : pct >= 50 ? "📈" : "💪"}</div>
-      <h2 className="text-2xl font-bold">Fertig!</h2>
-      <div className="bg-[#1a1a2e] border border-[#2a2a4a] rounded-2xl p-6 w-full">
-        <div className="text-4xl font-bold text-indigo-400">{pct}%</div>
-        <div className="text-gray-400 mt-1">{correct} / {total} richtig</div>
+      <div className="text-6xl">🎉</div>
+      <h2 className="text-2xl font-bold">Alles gelernt!</h2>
+      <div className="bg-[#1a1a2e] border border-[#2a2a4a] rounded-2xl p-6 w-full space-y-2">
+        <div className="text-4xl font-bold text-green-400">{total}</div>
+        <div className="text-gray-400">Karten gemeistert</div>
+        <div className="text-sm text-indigo-300 mt-2">
+          Alle Karten wurden mindestens einmal mit „Gut" oder „Leicht" bewertet.
+        </div>
       </div>
       <button
         onClick={onBack}

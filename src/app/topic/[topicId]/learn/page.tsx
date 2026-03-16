@@ -20,7 +20,6 @@ export default function LearnPage({
   const { type } = use(searchParams);
   const router = useRouter();
   const { settings, updateSettings, isLoading: settingsLoading } = useSettings();
-  const [correctCount, setCorrectCount] = useState(0);
   const [showSettings, setShowSettings] = useState(false);
 
   const cardType: CardType = (type as CardType) ?? settings?.cardType ?? "word";
@@ -31,8 +30,7 @@ export default function LearnPage({
     isComplete,
     isLoading,
     advance,
-    dueCount,
-    newCount,
+    masteredCount,
     total,
   } = useSession(topicId as TopicId, "learn", cardType, settings?.sessionSize ?? 20);
 
@@ -62,9 +60,6 @@ export default function LearnPage({
   }
 
   const handleAdvance = (quality?: number) => {
-    if (quality !== undefined && quality >= 3) {
-      setCorrectCount((c) => c + 1);
-    }
     advance(quality);
   };
 
@@ -80,7 +75,7 @@ export default function LearnPage({
           </button>
           <div className="flex items-center gap-3">
             <div className="text-sm text-gray-400">
-              {dueCount} fällig · {newCount} neu · {total} gesamt
+              {masteredCount} / {total} gelernt · {entries.length} im Stapel
             </div>
             <button
               onClick={() => setShowSettings(true)}
@@ -101,7 +96,7 @@ export default function LearnPage({
           settings={settings}
           onAdvance={handleAdvance}
           onBack={() => router.back()}
-          correctCount={correctCount}
+          correctCount={masteredCount}
         />
       </main>
 

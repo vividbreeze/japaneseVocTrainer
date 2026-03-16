@@ -20,12 +20,11 @@ export default function FreeInputPage({
   const { type } = use(searchParams);
   const router = useRouter();
   const { settings, updateSettings, isLoading: settingsLoading } = useSettings();
-  const [correctCount, setCorrectCount] = useState(0);
   const [showSettings, setShowSettings] = useState(false);
 
   const cardType: CardType = (type as CardType) ?? settings?.cardType ?? "word";
 
-  const { entries: sessionEntries, currentIndex, isComplete, isLoading, advance, dueCount, newCount, total } =
+  const { entries: sessionEntries, currentIndex, isComplete, isLoading, advance, masteredCount, total } =
     useSession(topicId as TopicId, "free-input", cardType, settings?.sessionSize ?? 20);
 
   if (settingsLoading || isLoading || !settings) {
@@ -37,7 +36,6 @@ export default function FreeInputPage({
   }
 
   const handleAdvance = (quality: number) => {
-    if (quality >= 3) setCorrectCount((c) => c + 1);
     advance(quality);
   };
 
@@ -53,7 +51,7 @@ export default function FreeInputPage({
           </button>
           <div className="flex items-center gap-3">
             <div className="text-sm text-gray-400">
-              {dueCount} fällig · {newCount} neu · {total} gesamt
+              {masteredCount} / {total} gelernt · {sessionEntries.length} im Stapel
             </div>
             <button
               onClick={() => setShowSettings(true)}
@@ -74,7 +72,7 @@ export default function FreeInputPage({
           settings={settings}
           onAdvance={handleAdvance}
           onBack={() => router.back()}
-          correctCount={correctCount}
+          correctCount={masteredCount}
         />
       </main>
 
